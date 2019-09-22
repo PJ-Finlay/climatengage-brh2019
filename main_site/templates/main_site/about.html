@@ -32,53 +32,33 @@
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
       <a class="navbar-brand" href="/">ClimatEngage</a>
+      <a href="about">About</a>
     </div>
   </nav>
 
-  <!-- Senators -->
-  <section class="features-icons bg-light text-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-8">
-          <h1>Senators</h1>
-          <div class="row">
-            {% for senator in senate_scores %}
-            <div class="col-6">
-              <h4>{{ senator }}</h4>
-              <img style="margin:1em" width="100" src="{{ senator.civics_info.photoUrl }}">
-              <h3 class="score">{{ senator.score_2018 }}</h3>
-              <a href="tel:{{senator.civics_info.phones.0}}">{{senator.civics_info.phones.0}}</a>
-              <br>
-              <a href="{{senator.civics_info.urls.0}}">{{senator.civics_info.urls.0}}</a>
-            </div>
-            {% endfor %}
-          </div>
-        </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-8">
+        <h1>About</h1>
+        <p>
+          ClimatEngage helps you find out who your representatives in Washington are and gives you their contact
+          information so that you can let them know how the climate crisis is important to you. ClimatEngage also
+          provides <a href="https://scorecard.lcv.org/methodology">Environmental Scorecard</a> scores for your
+          representative compiled by the <a href="https://en.wikipedia.org/wiki/League_of_Conservation_Voters">League of
+            Conservation Voters</a> so that
+          you can see if your representative has been voting to protect the environment.
+        </p>
+        <h3>How to influence your representative</h3>
+        <p>If you call your represntative make sure to be polite, and explain your position clearly. </p>
+        <p><a href="https://www.vox.com/policy-and-politics/2017/4/19/14949234/how-to-change-opinions-congress">How to
+            get Congress to do what you want - Vox</a></p>
       </div>
-      {% if house_available %}
-      <br><br>
-      <div class="row">
-        <div class="col-8">
-          <h1>Representative</h1>
-          <div class="row">
-            {% for rep in house_scores %}
-            <div class="col-12">
-              <h4>{{ rep }}</h4>
-              <img style="margin:1em" width="100" src="{{ rep.civics_info.photoUrl }}">
-              <h3 class="score">{{ rep.score_2018 }}</h3>
-              <a href="tel:{{rep.civics_info.phones.0}}">{{rep.civics_info.phones.0}}</a>
-              <br>
-              <a href="{{rep.civics_info.urls.0}}">{{rep.civics_info.urls.0}}</a>
-            </div>
-            {% endfor %}
-          </div>
-        </div>
-      </div>
-      {% endif %}
     </div>
-  </section>
-  <!-- Footer
-                -->
+  </div>
+
+
+  <!-- Footer -->
   <footer class="footer bg-light">
     <div class="container">
       <div class="row">
