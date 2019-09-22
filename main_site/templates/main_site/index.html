@@ -26,7 +26,7 @@
 
 </head>
 
-<body>
+<body class="bg-light">
 
   <!-- Navigation -->
   <nav class="navbar navbar-light bg-light static-top">
@@ -44,13 +44,16 @@
           <h1 class="mb-5">Get Engaged to force our leaders to take the climate crisis seriously!</h1>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <form action="reps/" method="POST">
-            {% csrf_token %}
+          <form action="reps/" method="GET">
             <div class="form-row">
+              {% if is_error == '1' %}
+              <h2 style="color:RED">Invalid address</h2><br>
+              {% endif %}
               <div class="col-12 col-md-9 mb-2 mb-md-0">
                 <input name="address" type="text" class="form-control form-control-lg"
                   placeholder="Enter your address...">
               </div>
+              {% csrf_token %}
               <div class="col-12 col-md-3">
                 <button type="submit" class="btn btn-block btn-lg btn-primary">Go</button>
               </div>
@@ -61,7 +64,7 @@
     </div>
   </header>
 
-
+  <br><br><br><br><br>
 
   <!-- Footer -->
   <footer class="footer bg-light">
